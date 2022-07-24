@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_title">Tidak Ada Judul</string>
+    <string name="movie_poster">Poster Film</string>
+    <string name="movie_banner">Banner Film</string>
+    <string name="movie_release_date">Tidak Ada</string>
+    <string name="movie_language">Tidak Ada</string>
+    <string name="movie_overview">Film ini tidak memiliki ikhtisar.</string>
+    <string name="movie_rating">%.1f</string>
+    <string name="module_not_exists">Modul %1$s tidak ditemukan</string>
+</resources>

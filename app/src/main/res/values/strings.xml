@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movieit</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+    <string name="language">Language</string>
+    <string name="release_date">Release Date</string>
+    <string name="rating">Rating</string>
+    <string name="overview">Overview</string>
+    <string name="favorite_module_title">Favorite</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="not_found">Not Found</string>
+    <string name="error_message">An Error Occurred</string>
+    <string name="loading">Loading</string>
+    <string name="search_message">Let\'s Discover New Movies!</string>
+    <string name="setting">Setting</string>
+    <string name="app_logo">App Logo</string>
+    <string name="app_banner">App Banner</string>
+    <string name="title_setting">Setting</string>
+</resources>

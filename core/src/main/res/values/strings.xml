@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_title">No Movie Title</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="movie_banner">Movie Banner</string>
+    <string name="movie_release_date">Unknown</string>
+    <string name="movie_language">Unknown</string>
+    <string name="movie_overview">This movie does not have overview.</string>
+    <string name="movie_rating">%.1f</string>
+    <string name="module_not_exists">Module %1$s is not available</string>
+</resources>

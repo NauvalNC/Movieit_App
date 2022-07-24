@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movieit</string>
+    <string name="home">Home</string>
+    <string name="search">Pencarian</string>
+    <string name="favorite">Favorite</string>
+    <string name="language">Bahasa</string>
+    <string name="release_date">Tanggal Rilis</string>
+    <string name="rating">Rating</string>
+    <string name="overview">Ikhtisar</string>
+    <string name="favorite_module_title">Favorit</string>
+    <string name="popular_movies">Film Populer</string>
+    <string name="not_found">Tidak Ditemukan</string>
+    <string name="error_message">Terjadi Kesalahan</string>
+    <string name="loading">Memuat</string>
+    <string name="search_message">Mari Jelajahi Film Baru!</string>
+    <string name="setting">Pengaturan</string>
+    <string name="app_logo">Logo App</string>
+    <string name="app_banner">Banner App</string>
+    <string name="title_setting">Pengaturan</string>
+</resources>
