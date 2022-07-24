@@ -7,7 +7,7 @@
     <string name="release_date">Release Date</string>
     <string name="rating">Rating</string>
     <string name="overview">Overview</string>
-    <string name="favorite_module_title">Favorite</string>
+    <string name="favorite_module_title">Favorite Module</string>
     <string name="popular_movies">Popular Movies</string>
     <string name="not_found">Not Found</string>
     <string name="error_message">An Error Occurred</string>
@@ -16,5 +16,6 @@
     <string name="setting">Setting</string>
     <string name="app_logo">App Logo</string>
     <string name="app_banner">App Banner</string>
-    <string name="title_setting">Setting</string>
+    <string name="title_setting">Setting Module</string>
+    <string name="title_search">Search Module</string>
 </resources>

@@ -7,7 +7,7 @@
     <string name="release_date">Tanggal Rilis</string>
     <string name="rating">Rating</string>
     <string name="overview">Ikhtisar</string>
-    <string name="favorite_module_title">Favorit</string>
+    <string name="favorite_module_title">Modul Favorit</string>
     <string name="popular_movies">Film Populer</string>
     <string name="not_found">Tidak Ditemukan</string>
     <string name="error_message">Terjadi Kesalahan</string>
@@ -16,5 +16,6 @@
     <string name="setting">Pengaturan</string>
     <string name="app_logo">Logo App</string>
     <string name="app_banner">Banner App</string>
-    <string name="title_setting">Pengaturan</string>
+    <string name="title_setting">Modul Pengaturan</string>
+    <string name="title_search">Modul Pencarian</string>
 </resources>

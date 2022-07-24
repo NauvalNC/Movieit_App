@@ -12,8 +12,10 @@
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/fragment_setting.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/core/src/main/res/layout/movie_item.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/favorite/src/main/res/layout/fragment_favorite.xml" value="0.20833333333333334" />
+        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/search/src/main/res/layout/fragment_search.xml" value="0.19166666666666668" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/layout/activity_setting.xml" value="0.19166666666666668" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/layout/fragment_setting.xml" value="0.19166666666666668" />
+        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/xml/setting_pref.xml" value="0.19166666666666668" />
       </map>
     </option>
   </component>

@@ -13,6 +13,7 @@
 
     <fragment
         android:id="@+id/search_menu"
+        app:moduleName="search"
         android:name="com.nauval.movieit.search.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search" />
