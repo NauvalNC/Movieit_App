@@ -8,4 +8,5 @@
     <string name="movie_overview">Film ini tidak memiliki ikhtisar.</string>
     <string name="movie_rating">%.1f</string>
     <string name="module_not_exists">Modul %1$s tidak ditemukan</string>
+    <string name="rating">Rating</string>
 </resources>
