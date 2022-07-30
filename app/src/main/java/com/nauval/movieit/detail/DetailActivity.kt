@@ -2,11 +2,9 @@ package com.nauval.movieit.detail
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.nauval.movieit.R
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.util.FAVORITE_MODULE

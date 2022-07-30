@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.nauval.movieit.R
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
 import com.nauval.movieit.core.util.Utils
@@ -66,10 +64,5 @@ class FavoriteFragment : Fragment() {
             setItemViewCacheSize(Utils.MAX_CACHE_ITEM)
             adapter = rvAdapter
         }
-
-        requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
-            ?.setOnItemReselectedListener {
-                binding.movieRv.smoothScrollToPosition(binding.movieRv.top)
-            }
     }
 }

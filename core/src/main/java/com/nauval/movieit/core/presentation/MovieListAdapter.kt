@@ -51,27 +51,25 @@ class MovieListAdapter : RecyclerView.Adapter<MovieListAdapter.ListMovieViewHold
         private val context = itemView.context
 
         fun bind(data: Movie, position: Int) {
-            with(data) {
-                binding.itemTitle.text = title
-                binding.itemRating.text = context.getString(R.string.movie_rating, rating)
+            binding.itemTitle.text = data.title
+            binding.itemRating.text = context.getString(R.string.movie_rating, data.rating)
 
-                Glide.with(context)
-                    .load(getActualPosterUrl())
-                    .placeholder(Utils.getCircularProgressDrawable(context))
-                    .error(
-                        ContextCompat.getDrawable(
-                            context,
-                            R.drawable.poster_placeholder
-                        )
+            Glide.with(context)
+                .load(data.getActualPosterUrl())
+                .placeholder(Utils.getCircularProgressDrawable(context))
+                .error(
+                    ContextCompat.getDrawable(
+                        context,
+                        R.drawable.poster_placeholder
                     )
-                    .into(binding.itemImage)
+                )
+                .into(binding.itemImage)
 
-                binding.root.setOnClickListener {
-                    onItemClickCallback.onItemClicked(
-                        data,
-                        position
-                    )
-                }
+            binding.root.setOnClickListener {
+                onItemClickCallback.onItemClicked(
+                    data,
+                    position
+                )
             }
         }
     }

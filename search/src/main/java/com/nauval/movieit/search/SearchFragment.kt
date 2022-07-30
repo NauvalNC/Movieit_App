@@ -11,7 +11,6 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nauval.movieit.R
 import com.nauval.movieit.core.data.Resource
 import com.nauval.movieit.core.domain.model.Movie
@@ -76,11 +75,6 @@ class SearchFragment : Fragment() {
             setItemViewCacheSize(Utils.MAX_CACHE_ITEM)
             adapter = rvAdapter
         }
-
-        requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
-            ?.setOnItemReselectedListener {
-                binding.movieRv.smoothScrollToPosition(binding.movieRv.top)
-            }
 
         setupMenu()
     }

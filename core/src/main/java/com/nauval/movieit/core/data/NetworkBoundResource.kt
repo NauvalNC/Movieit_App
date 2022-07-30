@@ -1,10 +1,9 @@
 package com.nauval.movieit.core.data
 
 import com.nauval.movieit.core.data.source.remote.network.ApiResponse
-import com.nauval.movieit.core.util.AppExecutors
 import kotlinx.coroutines.flow.*
 
-abstract class NetworkBoundResource<ResultType, RequestType>() {
+abstract class NetworkBoundResource<ResultType, RequestType> {
     private var result: Flow<Resource<ResultType>> = flow {
         emit(Resource.Loading())
 
@@ -22,7 +21,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>() {
                 }
                 is ApiResponse.Error -> {
                     onFetchFailed()
-                    emit(Resource.Error<ResultType>(apiResponse.message))
+                    emit(Resource.Error(apiResponse.message))
                 }
             }
         } else emitAll(loadFromDB().map { Resource.Success(it) })
