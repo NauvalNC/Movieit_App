@@ -3,6 +3,7 @@ package com.nauval.movieit.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -20,14 +21,15 @@ import com.nauval.movieit.detail.DetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private val homeVM: HomeViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(layoutInflater)
+        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -61,13 +63,18 @@ class HomeFragment : Fragment() {
             }
         }
 
-        with(binding.movieRv) {
+        with(binding.popularRv) {
             layoutManager = GridLayoutManager(requireContext(), Utils.GRID_COL)
             setItemViewCacheSize(Utils.MAX_CACHE_ITEM)
             adapter = rvAdapter
         }
 
         setupMenu()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     private fun setupMenu() {
@@ -90,7 +97,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setError(isError: Boolean, message: String) {
-        binding.movieRv.visibility = if (isError) View.GONE else View.VISIBLE
+        binding.popularRv.visibility = if (isError) View.GONE else View.VISIBLE
         binding.errorView.visibility = if (isError) View.VISIBLE else View.GONE
         binding.errorTv.text = message
     }
@@ -109,6 +116,14 @@ class HomeFragment : Fragment() {
                     Class.forName("$PACKAGE_PATH.setting.SettingActivity")
                 )
             )
+        } else {
+            Toast.makeText(
+                requireContext(),
+                getString(
+                    com.nauval.movieit.core.R.string.module_not_exists,
+                    SETTING_MODULE
+                ), Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

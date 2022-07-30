@@ -3,23 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.104" />
-        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.104" />
-        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2005" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/activity_detail.xml" value="0.20833333333333334" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/activity_setting.xml" value="0.358695652173913" />
-        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/activity_splash.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/fragment_search.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/app/src/main/res/layout/fragment_setting.xml" value="0.358695652173913" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/core/src/main/res/layout/movie_item.xml" value="0.358695652173913" />
-        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/favorite/src/main/res/layout/fragment_favorite.xml" value="0.3854166666666667" />
+        <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/favorite/src/main/res/layout/fragment_favorite.xml" value="0.20833333333333334" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/search/src/main/res/layout/fragment_search.xml" value="0.19166666666666668" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/layout/activity_setting.xml" value="0.19166666666666668" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/layout/fragment_setting.xml" value="0.19166666666666668" />
         <entry key="..\:/BinusDocuments/Semester6/S6_Submission/Movieit_V2/S6_AndroidExpert/setting/src/main/res/xml/setting_pref.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Nauval/StudioProjects/Movieit_App/app/src/main/res/layout/activity_detail.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Nauval/StudioProjects/Movieit_App/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/Nauval/StudioProjects/Movieit_App/app/src/main/res/menu/main_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Nauval/StudioProjects/Movieit_App/app/src/main/res/menu/search_menu.xml" value="0.3625" />
       </map>
     </option>
   </component>

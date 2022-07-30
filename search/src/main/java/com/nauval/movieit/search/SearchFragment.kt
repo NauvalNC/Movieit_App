@@ -23,7 +23,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
 class SearchFragment : Fragment() {
-    private lateinit var binding: FragmentSearchBinding
+    private var _binding: FragmentSearchBinding? = null
+    private val binding get() = _binding!!
     private val searchVM: SearchViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +36,7 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSearchBinding.inflate(layoutInflater)
+        _binding = FragmentSearchBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -77,6 +78,11 @@ class SearchFragment : Fragment() {
         }
 
         setupMenu()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     private fun setupMenu() {

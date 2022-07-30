@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nauval.movieit.setting.databinding.ActivitySettingBinding
 
 class SettingActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySettingBinding
+    private var _binding: ActivitySettingBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySettingBinding.inflate(layoutInflater)
+        _binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -28,5 +29,10 @@ class SettingActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

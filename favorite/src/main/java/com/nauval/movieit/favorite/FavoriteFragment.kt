@@ -17,7 +17,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
 class FavoriteFragment : Fragment() {
-    private lateinit var binding: FragmentFavoriteBinding
+    private var _binding: FragmentFavoriteBinding? = null
+    private val binding get() = _binding!!
     private val favVM: FavoriteViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFavoriteBinding.inflate(layoutInflater)
+        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -64,5 +65,10 @@ class FavoriteFragment : Fragment() {
             setItemViewCacheSize(Utils.MAX_CACHE_ITEM)
             adapter = rvAdapter
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -2,6 +2,7 @@ package com.nauval.movieit.detail
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -13,12 +14,13 @@ import com.nauval.movieit.databinding.ActivityDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetailBinding
+    private var _binding: ActivityDetailBinding? = null
+    private val binding get() = _binding!!
     private val detailVM: DetailViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
+        _binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val movie: Movie? = intent.getParcelableExtra(Utils.MOVIE_EXTRA)
@@ -66,6 +68,14 @@ class DetailActivity : AppCompatActivity() {
                     isFavorite = !isFavorite
                     detailVM.setFavoriteMovie(this, isFavorite)
                     setFavoriteState(isFavorite)
+                } else {
+                    Toast.makeText(
+                        this@DetailActivity,
+                        getString(
+                            com.nauval.movieit.core.R.string.module_not_exists,
+                            FAVORITE_MODULE
+                        ), Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
@@ -88,5 +98,10 @@ class DetailActivity : AppCompatActivity() {
                 else R.drawable.ic_baseline_favorite_border_24
             )
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -5,7 +5,6 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import android.widget.Toast
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.nauval.movieit.core.R
@@ -63,14 +62,6 @@ object Utils {
 
     fun isModuleAvailable(context: Context, moduleName: String): Boolean {
         val splitInstallManager = SplitInstallManagerFactory.create(context)
-        val isAvailable = splitInstallManager.installedModules.contains(FAVORITE_MODULE)
-        if (!isAvailable) {
-            Toast.makeText(
-                context,
-                context.getString(R.string.module_not_exists, moduleName),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        return isAvailable
+        return splitInstallManager.installedModules.contains(moduleName)
     }
 }

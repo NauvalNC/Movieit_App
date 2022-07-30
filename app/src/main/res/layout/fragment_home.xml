@@ -100,7 +100,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/movie_rv"
+            android:id="@+id/popular_rv"
             android:visibility="gone"
             tools:visibility="visible"
             android:layout_width="match_parent"
