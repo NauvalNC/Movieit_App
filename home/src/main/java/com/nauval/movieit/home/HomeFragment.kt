@@ -16,14 +16,21 @@ import com.nauval.movieit.core.presentation.MovieListAdapter
 import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.SETTING_MODULE
 import com.nauval.movieit.core.util.Utils
-import com.nauval.movieit.databinding.FragmentHomeBinding
 import com.nauval.movieit.detail.DetailActivity
+import com.nauval.movieit.home.databinding.FragmentHomeBinding
+import com.nauval.movieit.home.di.homeModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val homeVM: HomeViewModel by viewModel()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        loadKoinModules(homeModule)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,8 +79,8 @@ class HomeFragment : Fragment() {
         setupMenu()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

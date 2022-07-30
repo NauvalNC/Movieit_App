@@ -8,6 +8,7 @@
 
     <fragment
         android:id="@+id/home_menu"
+        app:moduleName="home"
         android:name="com.nauval.movieit.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />

@@ -17,4 +17,5 @@
     <string name="app_banner">Banner App</string>
     <string name="title_setting">Modul Pengaturan</string>
     <string name="title_search">Modul Pencarian</string>
+    <string name="title_home">Modul Home</string>
 </resources>
