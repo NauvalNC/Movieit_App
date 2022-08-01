@@ -16,7 +16,6 @@ import com.nauval.movieit.core.presentation.MovieListAdapter
 import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.SETTING_MODULE
 import com.nauval.movieit.core.util.Utils
-import com.nauval.movieit.detail.DetailActivity
 import com.nauval.movieit.home.databinding.FragmentHomeBinding
 import com.nauval.movieit.home.di.homeModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -110,9 +109,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun openDetails(movie: Movie) {
-        startActivity(Intent(requireContext(), DetailActivity::class.java).apply {
-            putExtra(Utils.MOVIE_EXTRA, movie)
-        })
+        startActivity(
+            Intent(
+                requireContext(),
+                Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+            ).apply {
+                putExtra(Utils.MOVIE_EXTRA, movie)
+            })
     }
 
     private fun openSetting() {

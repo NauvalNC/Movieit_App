@@ -5,7 +5,6 @@ import com.nauval.movieit.core.di.databaseModule
 import com.nauval.movieit.core.di.networkModule
 import com.nauval.movieit.core.di.repositoryModule
 import com.nauval.movieit.di.useCaseModule
-import com.nauval.movieit.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,8 +21,7 @@ class MyApplication : Application() {
                     databaseModule,
                     networkModule,
                     repositoryModule,
-                    useCaseModule,
-                    viewModelModule
+                    useCaseModule
                 )
             )
         }

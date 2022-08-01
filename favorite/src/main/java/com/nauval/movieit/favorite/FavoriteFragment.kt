@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
+import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.Utils
-import com.nauval.movieit.detail.DetailActivity
 import com.nauval.movieit.favorite.databinding.FragmentFavoriteBinding
 import com.nauval.movieit.favorite.di.favoriteModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,9 +40,13 @@ class FavoriteFragment : Fragment() {
         val rvAdapter = MovieListAdapter().apply {
             setOnItemClickCallback(object : MovieListAdapter.OnItemClickCallback {
                 override fun onItemClicked(item: Movie, position: Int) {
-                    startActivity(Intent(requireContext(), DetailActivity::class.java).apply {
-                        putExtra(Utils.MOVIE_EXTRA, item)
-                    })
+                    startActivity(
+                        Intent(
+                            requireContext(),
+                            Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+                        ).apply {
+                            putExtra(Utils.MOVIE_EXTRA, item)
+                        })
                 }
             })
         }

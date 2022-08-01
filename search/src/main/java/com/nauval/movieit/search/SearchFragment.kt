@@ -15,8 +15,8 @@ import com.nauval.movieit.R
 import com.nauval.movieit.core.data.Resource
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
+import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.Utils
-import com.nauval.movieit.detail.DetailActivity
 import com.nauval.movieit.search.databinding.FragmentSearchBinding
 import com.nauval.movieit.search.di.searchModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -125,8 +125,12 @@ class SearchFragment : Fragment() {
     }
 
     private fun openDetails(movie: Movie) {
-        startActivity(Intent(requireContext(), DetailActivity::class.java).apply {
-            putExtra(Utils.MOVIE_EXTRA, movie)
-        })
+        startActivity(
+            Intent(
+                requireContext(),
+                Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+            ).apply {
+                putExtra(Utils.MOVIE_EXTRA, movie)
+            })
     }
 }

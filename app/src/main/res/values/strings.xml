@@ -18,4 +18,5 @@
     <string name="title_setting">Setting Module</string>
     <string name="title_search">Search Module</string>
     <string name="title_home">Home Module</string>
+    <string name="title_detail">Detail Module</string>
 </resources>
