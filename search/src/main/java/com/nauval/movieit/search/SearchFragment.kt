@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -15,6 +16,7 @@ import com.nauval.movieit.R
 import com.nauval.movieit.core.data.Resource
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
+import com.nauval.movieit.core.util.DETAIL_MODULE
 import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.Utils
 import com.nauval.movieit.search.databinding.FragmentSearchBinding
@@ -125,12 +127,22 @@ class SearchFragment : Fragment() {
     }
 
     private fun openDetails(movie: Movie) {
-        startActivity(
-            Intent(
+        if (Utils.isModuleAvailable(requireContext(), DETAIL_MODULE)) {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+                ).apply {
+                    putExtra(Utils.MOVIE_EXTRA, movie)
+                })
+        } else {
+            Toast.makeText(
                 requireContext(),
-                Class.forName("$PACKAGE_PATH.detail.DetailActivity")
-            ).apply {
-                putExtra(Utils.MOVIE_EXTRA, movie)
-            })
+                getString(
+                    com.nauval.movieit.core.R.string.module_not_exists,
+                    DETAIL_MODULE
+                ), Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }

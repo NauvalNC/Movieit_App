@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
+import com.nauval.movieit.core.util.DETAIL_MODULE
 import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.Utils
 import com.nauval.movieit.favorite.databinding.FragmentFavoriteBinding
@@ -40,13 +42,7 @@ class FavoriteFragment : Fragment() {
         val rvAdapter = MovieListAdapter().apply {
             setOnItemClickCallback(object : MovieListAdapter.OnItemClickCallback {
                 override fun onItemClicked(item: Movie, position: Int) {
-                    startActivity(
-                        Intent(
-                            requireContext(),
-                            Class.forName("$PACKAGE_PATH.detail.DetailActivity")
-                        ).apply {
-                            putExtra(Utils.MOVIE_EXTRA, item)
-                        })
+                    openDetails(item)
                 }
             })
         }
@@ -74,5 +70,25 @@ class FavoriteFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun openDetails(movie: Movie) {
+        if (Utils.isModuleAvailable(requireContext(), DETAIL_MODULE)) {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+                ).apply {
+                    putExtra(Utils.MOVIE_EXTRA, movie)
+                })
+        } else {
+            Toast.makeText(
+                requireContext(),
+                getString(
+                    com.nauval.movieit.core.R.string.module_not_exists,
+                    DETAIL_MODULE
+                ), Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }

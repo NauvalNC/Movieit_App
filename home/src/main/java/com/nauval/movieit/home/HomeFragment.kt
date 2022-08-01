@@ -13,6 +13,7 @@ import com.nauval.movieit.R
 import com.nauval.movieit.core.data.Resource
 import com.nauval.movieit.core.domain.model.Movie
 import com.nauval.movieit.core.presentation.MovieListAdapter
+import com.nauval.movieit.core.util.DETAIL_MODULE
 import com.nauval.movieit.core.util.PACKAGE_PATH
 import com.nauval.movieit.core.util.SETTING_MODULE
 import com.nauval.movieit.core.util.Utils
@@ -109,13 +110,23 @@ class HomeFragment : Fragment() {
     }
 
     private fun openDetails(movie: Movie) {
-        startActivity(
-            Intent(
+        if (Utils.isModuleAvailable(requireContext(), DETAIL_MODULE)) {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    Class.forName("$PACKAGE_PATH.detail.DetailActivity")
+                ).apply {
+                    putExtra(Utils.MOVIE_EXTRA, movie)
+                })
+        } else {
+            Toast.makeText(
                 requireContext(),
-                Class.forName("$PACKAGE_PATH.detail.DetailActivity")
-            ).apply {
-                putExtra(Utils.MOVIE_EXTRA, movie)
-            })
+                getString(
+                    com.nauval.movieit.core.R.string.module_not_exists,
+                    DETAIL_MODULE
+                ), Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     private fun openSetting() {
