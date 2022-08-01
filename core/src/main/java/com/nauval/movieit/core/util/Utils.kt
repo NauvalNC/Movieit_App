@@ -7,7 +7,6 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
-import com.nauval.movieit.core.R
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
