@@ -18,4 +18,5 @@
     <string name="title_setting">Modul Pengaturan</string>
     <string name="title_search">Modul Pencarian</string>
     <string name="title_home">Modul Home</string>
+    <string name="title_detail">Modul Detil</string>
 </resources>
