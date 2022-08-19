@@ -6,4 +6,4 @@ This app has implemented best-practices including Clean Architecture, Modulariza
 Android Studio Chipmunk
 
 # Screenshots
-![Movieit App](https://github.com/NauvalNC/Story_App/blob/main/app/src/main/res/drawable/_story_app.png)
+![Movieit App](https://github.com/NauvalNC/Movieit_App/blob/master/core/src/main/res/drawable/movieit.png)
